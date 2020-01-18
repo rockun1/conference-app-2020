@@ -27,6 +27,7 @@ import io.github.droidkaigi.confsched2020.ext.assistedActivityViewModels
 import io.github.droidkaigi.confsched2020.ext.assistedViewModels
 import io.github.droidkaigi.confsched2020.ext.requireValue
 import io.github.droidkaigi.confsched2020.model.defaultLang
+import io.github.droidkaigi.confsched2020.rtypealias.AppcompatRId
 import io.github.droidkaigi.confsched2020.session.R
 import io.github.droidkaigi.confsched2020.session.databinding.FragmentSearchSessionsBinding
 import io.github.droidkaigi.confsched2020.session.ui.item.SectionHeaderItem
@@ -151,10 +152,10 @@ class SearchSessionsFragment : DaggerFragment() {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.menu_search_sessions, menu)
         val searchView = menu.findItem(R.id.search_view).actionView as SearchView
-        (searchView.findViewById(androidx.appcompat.R.id.search_button) as ImageView).setColorFilter(
+        (searchView.findViewById(AppcompatRId.search_button) as ImageView).setColorFilter(
             ContextCompat.getColor(requireContext(), R.color.search_icon)
         )
-        (searchView.findViewById(androidx.appcompat.R.id.search_close_btn) as ImageView).setColorFilter(
+        (searchView.findViewById(AppcompatRId.search_close_btn) as ImageView).setColorFilter(
             ContextCompat.getColor(requireContext(), R.color.search_close_icon)
         )
         searchView.isIconified = false

@@ -20,6 +20,7 @@ import dagger.Provides
 import dagger.android.support.DaggerFragment
 import io.github.droidkaigi.confsched2020.di.PageScope
 import io.github.droidkaigi.confsched2020.ext.assistedViewModels
+import io.github.droidkaigi.confsched2020.rtypealias.AndroidRTransition
 import io.github.droidkaigi.confsched2020.session.R
 import io.github.droidkaigi.confsched2020.session.databinding.FragmentSpeakerBinding
 import io.github.droidkaigi.confsched2020.session.ui.item.SpeakerDetailItem
@@ -47,7 +48,7 @@ class SpeakerFragment : DaggerFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         sharedElementEnterTransition = TransitionInflater.from(requireContext())
-            .inflateTransition(android.R.transition.move).apply {
+            .inflateTransition(AndroidRTransition.move).apply {
                 interpolator = AccelerateDecelerateInterpolator()
             }
     }
